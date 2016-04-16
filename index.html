@@ -33,4 +33,12 @@
 <center>
   <h1>⚠️ content coming soon ⚠️<br>here's a playlist till then</h1>
   <iframe id="playlist" src="https://embed.spotify.com/?uri=spotify%3Auser%3Astraiuss_whiz%3Aplaylist%3A1Gr3EpBrQbjvcECenHeeqw" width="350" height="500" frameborder="0" allowtransparency="true"></iframe>
+  <script type="text/javascript">
+  app.get('/webhook/', function (req, res) {
+    if (req.query['hub.verify_token'] === '<validation_token>') {
+      res.send(req.query['hub.challenge']);
+    }
+    res.send('Error, wrong validation token');
+  });
+  </script>
 </center>
