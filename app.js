@@ -1,3 +1,6 @@
+var express = require('express');
+var app = express();
+
 app.get('/webhook/', function (req, res) {
   if (req.query['hub.verify_token'] === 'coldcod_x_huemiser') {
     res.send(req.query['hub.challenge']);
